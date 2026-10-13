@@ -1,45 +1,53 @@
 # PICkitminus 3.28.03 — Windows Legacy Release
 
-This repository documents the Windows installer named `PICkitminus_installer_3_28_03.msi`, a legacy release of PICkitminus, an enhanced standalone programming application for compatible Microchip PICkit programmers.
+This repository documents the Windows legacy release identified as `PICkitminus_installer_3_28_03.msi`. It preserves information about what PICkitminus does, its device-support limitations, and the history of the original project.
 
-> **Status:** Historical preservation project. The installer itself is not currently stored in this repository; this README does not provide a download.
+> **Status:** Legacy software. This repository is not the official upstream project, and this README does not guarantee that the installer or device database is available here.
 
-## Overview
+## What is PICkitminus?
 
-PICkitminus is based on the PICkit2 standalone programming software and has been used with compatible PICkit 2, PICkit 3, and related programmer hardware. Actual compatibility depends on the application build, programmer firmware, and installed device database.
+PICkitminus is a community-developed extension of the PICkit2 standalone programming software. It provides a Windows application for programming supported microcontrollers with compatible PICkit hardware, including PICkit 2 and PICkit 3 in supported firmware modes.
 
-## Device support
+It is intended for **standalone programming**—for example, writing a compiled HEX file to a supported MCU and verifying the result. It is not a replacement for MPLAB X, and it is not an MPLAB X debugger plugin.
 
-PICkitminus uses a device database named `PK2DeviceFile.dat`. Supported devices depend on the exact database included with the particular release.
+## Device support and limitations
 
-The upstream published supported-device list includes:
+PICkitminus relies on its device database, commonly named `PK2DeviceFile.dat`, to identify a target and select the appropriate programming algorithm. Its support is therefore limited to the devices and programming methods defined in the database included with a particular build.
+
+This is legacy software, so **it should not be assumed to support newer Microchip devices**. A newer MCU may be absent from the database or may require a programming algorithm that the old application does not implement. Updating the application alone does not guarantee support for a new chip.
+
+The upstream published supported-device list includes the following entry:
 
 | Device | Published device ID | Notes |
 |---|---|---|
-| PIC16F15223 | `0x000030E4` | Listed in the published PICkitminus device list; verify the database bundled with your copy before programming. |
+| PIC16F15223 | `0x000030E4` | Listed in the published PICkitminus device list. Check the actual database installed with your copy before attempting programming. |
 
-A device appearing in a list is not a guarantee that every programmer, firmware version, or hardware clone will program it correctly. Do not substitute another device's programming definition.
+A published device entry is not a guarantee that every installer, database version, PICkit 3 firmware version, or hardware clone will work. Do not use another MCU's programming definition as a substitute.
 
-## MPLAB X and debugging
+### PICkitminus versus MPLAB X
 
-PICkitminus is a standalone programming application, **not an MPLAB X debugger plugin**. A device being listed by PICkitminus does not mean MPLAB X supports that device with PICkit 3.
+PICkitminus standalone programming support and MPLAB X hardware-debugging support are different things. A PIC being listed by PICkitminus does not mean that MPLAB X supports debugging it with PICkit 3. Check Microchip's device/tool support information for the exact MCU, IDE version, and debugger before relying on breakpoints, stepping, or variable inspection.
 
-For the PIC16F15223, check Microchip's current device/tool support information before relying on PICkit 3 for in-circuit debugging. Standalone programming and source-level debugging are separate capabilities.
+## What happened to the original project?
 
-## Historical context
+The original project is maintained at [jaka-fi/PICkitminus](https://github.com/jaka-fi/PICkitminus).
 
-The upstream PICkitminus maintainer reported on 27 September 2026 that release downloads and the device database had been removed following a copyright claim involving PICkitPlus. The maintainer indicated that the affected files would need review before cleaned-up downloads could be restored.
+According to the upstream maintainer's notice dated 27 September 2026, the project’s release downloads and device database were removed after a copyright claim involving PICkitPlus. The notice said the affected device entries and files needed review/cleanup before cleaned-up downloads could potentially be restored. This describes the maintainer's account of the event; it should not be read as a legal finding or as confirmation that replacement downloads are available.
 
-This repository records the legacy release's identity and compatibility notes. It is not the official upstream project and does not imply that removed downloads are available here.
+The result is that the original source repository may remain visible while some ready-to-use Windows downloads and device-database files are unavailable. Since the device database is central to target support, its removal makes it harder to install or use the software for devices that are not already supported by a local copy.
+
+## About this repository
+
+This repository is an independent historical reference for the Windows release `PICkitminus_installer_3_28_03.msi`. It is not affiliated with or endorsed by the original maintainer, Microchip, or PICkitPlus. It does not imply that removed upstream files are included here or that the software supports all current PIC devices.
 
 ## References
 
-- [Upstream PICkitminus repository](https://github.com/jaka-fi/PICkitminus)
-- [Upstream supported-device list](https://github.com/jaka-fi/PICkitminus/blob/master/PICkitminus_supported_devices.txt)
+- [Original PICkitminus repository](https://github.com/jaka-fi/PICkitminus)
+- [PICkitminus published supported-device list](https://github.com/jaka-fi/PICkitminus/blob/master/PICkitminus_supported_devices.txt)
 - [PICkitPlus repository](https://github.com/Anobium/PICKitPlus)
 
-## Preservation and safety
+## Safety and preservation notes
 
+- Verify the origin and integrity of any installer before running it.
 - Keep the original filename and version information when documenting a lawful copy.
-- Verify the source and integrity of any installer before running it.
-- Do not upload files unless you have the right to redistribute them.
+- Do not upload or redistribute installers, firmware, or device databases unless you have the right to do so.
