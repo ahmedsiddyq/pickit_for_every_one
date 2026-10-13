@@ -19,12 +19,7 @@ See [SUPPORTED_DEVICES.md](SUPPORTED_DEVICES.md) for device-family examples, the
 PICkitminus relies on its device database, commonly named `PK2DeviceFile.dat`, to identify a target and select the appropriate programming algorithm. Its support is therefore limited to the devices and programming methods defined in the database included with a particular build.
 
 This is legacy software, so **it should not be assumed to support newer Microchip devices**. A newer MCU may be absent from the database or may require a programming algorithm that the old application does not implement. Updating the application alone does not guarantee support for a new chip.
-
-The upstream published supported-device list includes the following entry:
-
-| Device | Published device ID | Notes |
-|---|---|---|
-| PIC16F15223 | `0x000030E4` | Listed in the published PICkitminus device list. Check the actual database installed with your copy before attempting programming. |
+ 
 
 A published device entry is not a guarantee that every installer, database version, PICkit 3 firmware version, or hardware clone will work. Do not use another MCU's programming definition as a substitute.
 
