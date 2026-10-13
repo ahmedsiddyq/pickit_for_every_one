@@ -10,6 +10,10 @@ PICkitminus is a community-developed extension of the PICkit2 standalone program
 
 It is intended for **standalone programming**—for example, writing a compiled HEX file to a supported MCU and verifying the result. It is not a replacement for MPLAB X, and it is not an MPLAB X debugger plugin.
 
+## Supported-device list
+
+See [SUPPORTED_DEVICES.md](SUPPORTED_DEVICES.md) for device-family examples, the PIC16F15223 entry, and a link to the original project's published full supported-device list. That page explains why the list is historical and why the actual installed device database must be checked.
+
 ## Device support and limitations
 
 PICkitminus relies on its device database, commonly named `PK2DeviceFile.dat`, to identify a target and select the appropriate programming algorithm. Its support is therefore limited to the devices and programming methods defined in the database included with a particular build.
